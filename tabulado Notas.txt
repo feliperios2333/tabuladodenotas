@@ -1,0 +1,162 @@
+public static Object oEstudiantes[][];
+    public static Object oProfesores[][];
+    public static int nNotas[][];
+    public static int nGrados[][];
+    public static Object oColegio[][];
+    public static Object oMateria[][];
+    public static int nNumFilas;
+
+    public static void main(String[] args) {
+        Scanner sTc = new Scanner(System.in);
+        Scanner nTc = new Scanner(System.in);
+
+        char cTipoOpcion;
+        boolean salir = false;
+
+        while (!salir) {
+            System.out.print("\n*************************************");
+            System.out.print("\n******-=[ TABULADO DE NOTAS ]=-******");
+            System.out.print("\n*************************************");
+            System.out.print("\nA) Insercion de datos");
+            System.out.print("\nB) Modificacion de datos");
+            System.out.print("\nC) Eliminacion de datos");
+            System.out.print("\nD) Recuperacion de datos");
+            System.out.print("\n*************************************");
+            System.out.print("\nQ) Salir ");
+            System.out.print("\n*************************************");
+            System.out.print("\n*Seleccione una de las opciones:");
+
+            cTipoOpcion = sTc.next().charAt(0);
+
+            switch (cTipoOpcion) {
+                case 'a':
+                case 'A':
+                    boolean salirsubmenu = false; /*Se creo Variable booleana para indicarle al loop 
+                    cuando debe salir del menu, se inicia en false para que ingrese en el while, si se presiona
+                    cualquier otra letra diferente a Q esta variable 
+                    se mantiene en false y continua con el loop, si se presiona la Q entra en el case y pone la
+                    variable en true por lo tanto sale del while y continua con la ejecucion del codigo*/
+                    while (!salirsubmenu) {
+                        System.out.print("\n*************************************");
+                        System.out.print("\n******-=[ INSERCION DE DATOS ]=-******");
+                        System.out.print("\n*************************************");
+                        System.out.print("\nA) Estudiante");
+                        System.out.print("\nB) Materia");
+                        System.out.print("\nC) Nota ");
+                        System.out.print("\nD) Profesor: ");
+                        System.out.print("\nE) Grado");
+                        System.out.print("\nF) Jornada");
+                        System.out.print("\nG) Colegio");
+                        System.out.print("\n*************************************");
+                        System.out.print("\nQ) Salir ");
+                        System.out.print("\n*************************************");
+                        System.out.print("\n*Seleccione una de las opciones:");
+
+                        char cTipoOpcionInsercion = sTc.next().charAt(0);
+
+                        switch (cTipoOpcionInsercion) {
+                            case 'a':
+                            case 'A':
+                                System.out.print("Digite Cantidad De estudiantes a registrar:");
+                                nNumFilas = nTc.nextInt();
+                                Object oEstudiantes[][] = new Object[nNumFilas][9];
+                                for (int f = 0; f < nNumFilas; f++) {
+                                    for (int c = 0; c < 9; c++) {
+                                        System.out.print("\nID Estudiante:");
+                                        oEstudiantes[f][0] = nTc.nextInt();
+                                        System.out.print("\nNombre:");
+                                        oEstudiantes[f][1] = sTc.next();
+                                        System.out.print("\nApellido:");
+                                        oEstudiantes[f][0] = nTc.nextInt();
+                                        System.out.print("\nGenero");
+                                        oEstudiantes[f][1] = sTc.next();
+                                        System.out.print("\nEdad:");
+                                        oEstudiantes[f][1] = sTc.next();
+                                        System.out.print("\nFecha de Nacimiento:");
+                                        oEstudiantes[f][0] = nTc.nextInt();
+                                        System.out.print("\nNumero telefonico:");
+                                        oEstudiantes[f][1] = sTc.next();
+                                        System.out.print("\nCorreo:");
+                                        oEstudiantes[f][0] = nTc.nextInt();
+                                        System.out.print("\nDireccion:");
+                                        oEstudiantes[f][1] = sTc.next();
+                                        break;
+                                    }
+
+                                }//fin for estudiantes 
+                                break;
+                            case 'b':
+                            case 'B':
+                               System.out.print("Digite cantidad de Materias a registrar:");
+                                nNumFilas = nTc.nextInt();
+                                Object oMateria[][] = new Object[nNumFilas][2];
+                                for (int f = 0; f < nNumFilas; f++) {
+                                    for (int c = 0; c < 2; c++) {
+                                        System.out.print("\nID  Materia:");
+                                        oMateria[f][c] = nTc.nextInt();
+                                        System.out.print("\nNombre:");
+                                        oMateria[f][c] = sTc.next();
+                                        break;
+                                    }
+                                }//materias
+                                break;
+                            case 'c':
+                            case 'C':
+                                System.out.print("Digite cantidad de Notas  a registrar:");
+                                nNumFilas = nTc.nextInt();
+                                int nNotas[][] = new int[nNumFilas][7];
+                                for (int f = 0; f < nNumFilas; f++) {
+                                    for (int c = 0; c < 7; c++) {
+                                        System.out.print("\nID Nota:");
+                                        nNotas[f][0] = nTc.nextInt();
+                                        System.out.print("\nID Materia:");
+                                        nNotas[f][1] = nTc.nextInt();
+                                        System.out.print("\nID Estudiantes:");
+                                        nNotas[f][2] = nTc.nextInt();
+                                        System.out.print("\nNota 40%:");
+                                        nNotas[f][3] = nTc.nextInt();
+                                        System.out.print("\nNota 50%:");
+                                        nNotas[f][5] = nTc.nextInt();
+                                        System.out.print("\nNota Promedio:");
+                                        nNotas[f][5] = nTc.nextInt();
+                                        break;
+                                    }
+                                }// fin for Notas
+                                break;
+                            case 'd':
+                            case 'D':
+                                // aca van los for para los casos D
+                                break;
+                            // ... (otros casos)
+                            case 'q':
+                            case 'Q':
+                                salirsubmenu = true;// Se pone variable en true si se presiona letra Q
+                                break;
+                            default:
+                                System.out.println("Seleccione una opción válida");
+                                break;
+                        }
+                    }
+
+                case 'b':
+                case 'B':
+                    // Menu Modificacion
+                    break;
+                case 'c':
+                case 'C':
+                    // Menu Eliminacion
+                    break;
+                case 'd':
+                case 'D':
+                    // Menu Recuperacion
+                    break;
+                case 'q':
+                case 'Q':
+                    System.out.println("Saliendo del Programa");
+                    salir = true;
+                    break;
+                default:
+                    System.out.println("Error de opción");
+            }
+        }
+    }
